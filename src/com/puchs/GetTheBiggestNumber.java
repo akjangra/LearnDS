@@ -17,7 +17,7 @@ public class GetTheBiggestNumber {
     private static int getTheBiggestNumber(int num, int len) {
         if(num < 0) return -1; //Not Supported
         if(num < 9) return num;
-        Integer[] digits = getDigits(num, len);
+        Integer[] digits = numberToDigits(num, len);
         Arrays.sort(digits, Collections.reverseOrder());
         System.out.println(Arrays.toString(digits));
         int result = digitsToNumber(digits);
@@ -32,7 +32,7 @@ public class GetTheBiggestNumber {
         return n;
     }
 
-    private static Integer[] getDigits(int num, int len) {
+    private static Integer[] numberToDigits(int num, int len) {
         Integer[] digits = new Integer[len];
         int i = 0;
         while(num > 0) {
