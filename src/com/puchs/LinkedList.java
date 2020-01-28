@@ -72,6 +72,20 @@ public class LinkedList {
             curr.next = node;
             return head;
         }
+
+        public static void findMiddleNode(MyLinkedList head) {
+            if(head == null || head.next == null || head.next.next == null)
+                System.out.println("Head is middle.");
+
+            MyLinkedList slow = head;
+            MyLinkedList fast = head;
+            while(fast != null && fast.next != null) {
+                slow = slow.next;
+                fast = fast.next.next;
+            }
+
+            System.out.println("Middle Node is = " + slow.data);
+        }
     }
 
     public static void main(String[] args) {
@@ -86,9 +100,19 @@ public class LinkedList {
         ll.next.next.next = new MyLinkedList();
 
         ll.next.next.next.data = 40;
-        ll.next.next.next.next = null;
+        ll.next.next.next.next = new MyLinkedList();
+
+        ll.next.next.next.next.data = 50;
+        ll.next.next.next.next.next = new MyLinkedList();;
+
+        ll.next.next.next.next.next.data = 60;
+        ll.next.next.next.next.next.next = new MyLinkedList();;
+
+        ll.next.next.next.next.next.next.data = 70;
+        ll.next.next.next.next.next.next.next = null;
 
         MyLinkedList.traverse(ll);
+        MyLinkedList.findMiddleNode(ll);
         ll = MyLinkedList.reverseLL(ll);
         System.out.println("After reverseLL() : ");
         MyLinkedList.traverse(ll);
