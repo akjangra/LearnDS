@@ -15,6 +15,10 @@ public class LinkedList {
             this.next = null;
         }
 
+        /**
+         * TRAVERSE A LINKED LIST
+         * @param head Head of LL
+         */
         public static void traverse (MyLinkedList head) {
             System.out.print("List : \t\t");
             while (head != null) {
@@ -23,6 +27,11 @@ public class LinkedList {
             }
         }
 
+        /**
+         * Reverse a linked list
+         * @param head Head of LL
+         * @return head of reversed LL
+         */
         public static MyLinkedList reverseLL(MyLinkedList head) {
             if(head == null || head.next == null) {
                 return head;
