@@ -11,11 +11,11 @@ public class MergeTwoSortedArrays {
 
         int[] arr2 = {10, 13, 16, 29, 45, 57, 58, 111, 118, 99};
 
-        int[] result = getMergedOp(arr1, arr2);
+        int[] result = getMergedOutput(arr1, arr2);
         System.out.println("Result = " + Arrays.toString(result));
     }
 
-    private static int[] getMergedOp(int[] arr1, int[] arr2) {
+    private static int[] getMergedOutput(int[] arr1, int[] arr2) {
         if(arr1.length == 0)
             return arr2;
 
